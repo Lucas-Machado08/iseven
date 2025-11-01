@@ -1,0 +1,1792 @@
+/* ===== IMPORTAÇÕES E CONFIGURAÇÕES GLOBAIS ===== */
+@import url('https://fonts.cdnfonts.com/css/avenir');
+@import url('https://fonts.cdnfonts.com/css/avenir-next');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset global e configurações base */
+* {
+    margin: 0%;
+    /* Remove margem padrão */
+    box-sizing: border-box;
+    /* Inclui padding/border no tamanho */
+    scroll-behavior: smooth;
+    /* Rolagem suave */
+    font-family: "Noto Sans", sans-serif;
+    /* Fonte padrão */
+}
+
+#background-index {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 30px 80px;
+}
+
+#first-line {
+    width: 100%;
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+}
+
+#percentage {
+    font-size: 12.8em;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 1000;
+    width: 100%;
+    text-align: center;
+    color: #00aa8f;
+    line-height: 0.9;
+}
+
+#percentage-simbol {
+    font-size: 0.7em;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 850;
+    color: #00aa8f;
+    line-height: 0.9;
+}
+
+#text {
+    width: 100%;
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+#logo img {
+    width: 40%;
+}
+
+#down-arrow {
+    background-image: url(http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/seta-baixo.png);
+    width: 3%;
+    height: 5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+}
+
+#second-page {
+    width: 100%;
+    height: 244vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lamp {
+    background-image: url(http://web.archive.org/web/20190130101933im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/lampada.png);
+    background-size: contain;
+    width: 6%;
+    height: 15vh;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+}
+
+#advertisement {
+    color: #00aa8f;
+    text-align: center;
+    width: 100%;
+    height: 15vh;
+    margin-top: 2%;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 2em;
+    font-weight: 550;
+    line-height: 1.1;
+}
+
+#advertisement-box1 {
+    font-size: 1.5em;
+    color: #3B547B;
+    font-weight: 600;
+}
+
+#advertisement-box2 {
+    font-size: 1.7em;
+    color: #3B547B;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+#container-logos {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin-top: 2%;
+}
+
+#vale {
+    background-image: url(http://web.archive.org/web/20190130101935im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/vale.png);
+    width: 10%;
+    height: 9vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#voto {
+    background-image: url(http://web.archive.org/web/20190130101937im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/votorantim.png);
+    width: 15%;
+    height: 5vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#fiat {
+    background-image: url(http://web.archive.org/web/20190130101939im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/fiat.png);
+    width: 7%;
+    height: 5vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#yamana {
+    background-image: url(http://web.archive.org/web/20190130101942im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/yamana.png);
+    width: 15%;
+    height: 11vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#danone {
+    background-image: url(http://web.archive.org/web/20190130101945im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/danone.png);
+    width: 13%;
+    height: 4vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#castrol {
+    background-image: url(http://web.archive.org/web/20190130101947im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/castrol.png);
+    width: 14%;
+    height: 13vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#container-logos-mid {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+
+#arcelor {
+    background-image: url(http://web.archive.org/web/20190130101949im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/arcelor.png);
+    width: 12%;
+    height: 7vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#musashi {
+    background-image: url(http://web.archive.org/web/20190130101951im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/musashi.png);
+    width: 15%;
+    height: 5vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#magna {
+    background-image: url(http://web.archive.org/web/20190130101953im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/magna.png);
+    width: 11%;
+    height: 11vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#bb {
+    background-image: url(http://web.archive.org/web/20190130101956im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/bb.png);
+    width: 9%;
+    height: 5vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#bimbo {
+    background-image: url(http://web.archive.org/web/20190130101958im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/bimbo.png);
+    width: 9%;
+    height: 4vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#malwee {
+    background-image: url(http://web.archive.org/web/20190130102000im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/malwee.png);
+    width: 13%;
+    height: 4vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#container-logos-foot {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+#brembo {
+    background-image: url(http://web.archive.org/web/20190130102002im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/brembo.png);
+    width: 14%;
+    height: 12vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#kroton {
+    background-image: url(http://web.archive.org/web/20190130102004im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/kroton.png);
+    width: 15%;
+    height: 7vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#globo {
+    background-image: url(http://web.archive.org/web/20190130102006im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/globo.png);
+    width: 10%;
+    height: 5vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#magneti {
+    background-image: url(http://web.archive.org/web/20190130102009im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/magneti.png);
+    width: 8%;
+    height: 4vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#rio {
+    background-image: url(http://web.archive.org/web/20190130102011im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/riosul.png);
+    width: 12%;
+    height: 8vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#barra {
+    background-image: url(http://web.archive.org/web/20190130102013im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/barrashopping.png);
+    width: 13%;
+    height: 2.1vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#cut {
+    background-image: url(http://web.archive.org/web/20190130102015im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/divisao.png);
+    width: 60%;
+    background-size: cover;
+    margin-top: 2%;
+    padding: 20px;
+    background-position: center;
+}
+
+#tech {
+    font-size: 3em;
+    margin-top: 2%;
+    color: #3B547B;
+    font-family: "Noto Sans", sans-serif;
+}
+
+#box-solution {
+    font-size: 2.5em;
+    width: 60%;
+    color: #00aa8f;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#online {
+    font-size: 2em;
+    color: #3B547B;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 0.9;
+    font-weight: 600;
+}
+
+#container {
+    display: flex;
+    width: 60%;
+    height: 30vh;
+    margin-top: 2%;
+}
+
+#laptop {
+    background-image: url(http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/img3.png);
+    width: 80%;
+    height: 34vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#container-infos {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13%;
+}
+
+#client {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 110%;
+    height: 5vh;
+}
+
+#box {
+    width: 45%;
+    height: 7vh;
+}
+
+#box>img {
+    width: 44%;
+    height: 7vh;
+}
+
+#cont {
+    font-family: "Noto Sans", sans-serif;
+    color: #00aa8f;
+    text-align: center;
+    font-size: 0.8em;
+    width: 50%;
+    margin-right: 5%;
+}
+
+#med {
+    font-family: "Noto Sans", sans-serif;
+    color: #00aa8f;
+    text-align: center;
+    font-size: 0.8em;
+    width: 30%;
+    margin-right: 5%;
+}
+
+#pc {
+    width: 30%;
+}
+
+#iseven {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 110%;
+    height: 5vh;
+    margin-top: 9%;
+}
+
+#box-foot {
+    width: 45%;
+    height: 5vh;
+}
+
+#box-foot>img {
+    width: 45%;
+    height: 7vh;
+}
+
+#diag {
+    font-family: "Noto Sans", sans-serif;
+    color: #3B547B;
+    text-align: center;
+    font-size: 0.8em;
+    width: 55%;
+    margin-right: 5%;
+}
+
+#ger {
+    font-family: "Noto Sans", sans-serif;
+    color: #3B547B;
+    text-align: center;
+    font-size: 0.8em;
+    width: 30%;
+    margin-right: 5%;
+}
+
+#soft {
+    font-family: "Noto Sans", sans-serif;
+    color: #3B547B;
+    text-align: center;
+    font-size: 0.8em;
+    width: 35%;
+}
+
+#barr {
+    width: 55%;
+    background-image: url("http://web.archive.org/web/20190130100839im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/divisao-online.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+    padding-top: 30%;
+    margin-left: 37%;
+}
+
+#slicer {
+    background-image: url(http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/divisao2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 63%;
+    height: 5vh;
+    margin-top: 5%;
+}
+
+#title-solutions-off {
+    color: #00aa8f;
+    font-size: 2.5em;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    width: 60%;
+}
+
+#off {
+    color: #3B547B;
+    font-size: 2em;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#container-solutions-off {
+    display: flex;
+    width: 100%;
+}
+
+#img-solutions-off {
+    background-image: url(http://web.archive.org/web/20190130100847im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/mockup-app.png);
+    width: 90%;
+    background-size: contain;
+    height: 60vh;
+    background-repeat: no-repeat;
+    margin-top: 2%;
+}
+
+#container-infos-off {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+#client-off {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 5vh;
+}
+
+#box-off {
+    width: 25%;
+    height: 7vh;
+}
+
+#box-off>img {
+    width: 64%;
+    height: 7vh;
+}
+
+#cont-off {
+    font-family: "Noto Sans", sans-serif;
+    color: #00aa8f;
+    text-align: center;
+    font-size: 0.8em;
+    width: 55%;
+    margin-right: 5%;
+}
+
+#pc-off {
+    width: 30%;
+    margin-left: 5%;
+}
+
+#iseven-off {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 5vh;
+    margin-top: 7%;
+}
+
+#box-foot-off {
+    width: 25%;
+    height: 7vh;
+}
+
+#box-foot-off>img {
+    width: 64%;
+    height: 7vh;
+}
+
+#diag-off {
+    font-family: "Noto Sans", sans-serif;
+    color: #3B547B;
+    text-align: center;
+    font-size: 0.8em;
+    width: 55%;
+    margin-right: 5%;
+}
+
+#soft-off {
+    font-family: "Noto Sans", sans-serif;
+    color: #3B547B;
+    text-align: center;
+    font-size: 0.8em;
+    width: 35%;
+}
+
+#barr-off {
+    width: 25%;
+    background-image: url("http://web.archive.org/web/20190130100851im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/divisao-offline.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 2%;
+    padding-top: 30%;
+    margin-left: 28%;
+}
+
+#menu {
+    width: 100%;
+    height: 9vh;
+    background-color: #3B547B;
+    display: flex;
+    align-items: center;
+}
+
+#menu-page {
+    width: 100%;
+    height: 65vh;
+    background-image: url(http://web.archive.org/web/20190130100853im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/bg2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#logo-menu {
+    width: 19%;
+    height: 3vh;
+    margin-left: 16%;
+}
+
+#logo-menu>img {
+    width: 40%;
+}
+
+#menu-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 50%;
+}
+
+#btn-conhecimento {
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-conhecimento>a {
+    text-decoration: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-beneficios>a {
+    text-decoration: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-solucoes>a {
+    text-decoration: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-como-funciona>a {
+    text-decoration: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-contrate {
+    background: linear-gradient(to right, #00aa8f 0%, #99d48f 100%);
+    width: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.3vh;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+#btn-contrate>a {
+    text-decoration: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-contrate:hover {
+    scale: 110%;
+}
+
+#container-energia {
+    margin-left: 23%;
+    width: 60%;
+    height: 20vh;
+    margin-top: 6%;
+}
+
+#container-texto-energia {
+    width: 110%;
+    height: 20vh;
+    display: flex;
+    margin-top: 1%;
+}
+
+#introd-texto-energia {
+    color: white;
+    font-size: 2.7em;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 1000;
+    line-height: 0.9;
+}
+
+#texto-energia {
+    color: white;
+    font-size: 1em;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 1000;
+}
+
+#btn-contrate-energia {
+    background: linear-gradient(to right, #00aa8f 0%, #99d48f 100%);
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.3vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-top: 5%;
+    text-decoration: none;
+}
+
+#btn-contrate-energia>a {
+    text-decoration: none;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+#btn-contrate-energia:hover {
+    scale: 110%;
+}
+
+#imagem-roteador {
+    width: 45%;
+    height: 45vh;
+}
+
+#imagem-roteador>img {
+    width: 100%;
+    height: 100%;
+}
+
+#beneficios-page {
+    width: 100%;
+    height: 90vh;
+}
+
+#container-beneficios {
+    display: flex;
+    width: 73%;
+    height: 11vh;
+    margin-top: 3%;
+    margin-left: 27%;
+}
+
+#img-beneficio-financeiro {
+    margin-top: 3.5%;
+}
+
+#img-beneficio-financeiro>img {
+    width: 45px;
+    height: 42px;
+}
+
+#txt-beneficios-financeiros {
+    font-size: 1.1em;
+    color: #00AA8F;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    margin-top: 3%;
+    margin-left: 2.5%;
+    line-height: 1;
+}
+
+#txt-financeiros {
+    color: #3B547B;
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+#arrow-beneficios-financeiros {
+    margin-top: 4%;
+    margin-left: 7%;
+}
+
+#txt-apresentacao-financeiro {
+    margin-top: 3.3%;
+    margin-left: 4%;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 1000;
+    color: #3B547B;
+}
+
+#txt-apresentacao-no-bold {
+    font-weight: 400;
+}
+
+#txt-apresentacao-no-bold2 {
+    font-weight: 400;
+}
+
+.line-beneficios {
+    margin: 40px auto;
+    height: 1px;
+    background-color: rgba(60, 85, 124, 0.4);
+    width: 46%;
+}
+
+#container-beneficios-op {
+    display: flex;
+    width: 73%;
+    height: 11vh;
+    margin-top: 3%;
+    margin-left: 27%;
+}
+
+#img-beneficio-operacional {
+    margin-top: 0.5%;
+}
+
+#img-beneficio-operacional>img {
+    width: 45px;
+    height: 42px;
+}
+
+#txt-beneficios-operacionais {
+    font-size: 1.1em;
+    color: #00AA8F;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    margin-left: 2.5%;
+    line-height: 1;
+}
+
+#txt-operacionais {
+    color: #3B547B;
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+#arrow-beneficios-operacionais {
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+#txt-apresentacao-operacional {
+    margin-left: 4%;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 1000;
+    color: #3B547B;
+    margin-top: 0.2%;
+}
+
+#txt-operacional-no-bold {
+    font-weight: 400;
+}
+
+#txt-operacional-no-bold2 {
+    font-weight: 400;
+}
+
+#container-beneficios-tec {
+    display: flex;
+    width: 73%;
+    height: 11vh;
+    margin-top: 3%;
+    margin-left: 27%;
+}
+
+#img-beneficio-tecnico {
+    margin-top: 0.5%;
+}
+
+#img-beneficio-tecnico>img {
+    width: 45px;
+    height: 42px;
+}
+
+#txt-beneficios-tecnicos {
+    font-size: 1.1em;
+    color: #00AA8F;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    margin-left: 2.5%;
+    line-height: 1;
+}
+
+#txt-tecnicos {
+    color: #3B547B;
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+#arrow-beneficios-tecnicos {
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+#txt-apresentacao-tecnico {
+    margin-left: 4%;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 1000;
+    color: #3B547B;
+}
+
+#txt-tec-no-bold {
+    font-weight: 400;
+}
+
+#txt-tec-no-bold2 {
+    font-weight: 400;
+}
+
+#container-beneficios-ger {
+    display: flex;
+    width: 73%;
+    height: 11vh;
+    margin-top: 3%;
+    margin-left: 27%;
+}
+
+#img-beneficio-gerencial {
+    margin-top: 0.5%;
+}
+
+#img-beneficio-gerencial>img {
+    width: 45px;
+    height: 42px;
+}
+
+#txt-beneficios-gerenciais {
+    font-size: 1.1em;
+    color: #00AA8F;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    margin-left: 2.5%;
+    line-height: 1;
+}
+
+#txt-gerenciais {
+    color: #3B547B;
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+#arrow-beneficios-gerenciais {
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+#txt-apresentacao-gerencial {
+    margin-left: 4%;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 1000;
+    color: #3B547B;
+    margin-top: 0.2%;
+}
+
+#txt-ger-no-bold {
+    font-weight: 400;
+}
+
+#txt-ger-no-bold2 {
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#online-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#online-div-banner {
+    display: flex;
+    background: linear-gradient(to right, #00a991 30%, #3C557C 30%);
+    height: 210px;
+    width: 100%;
+    position: relative;
+}
+
+#online-div-absolute {
+    position: absolute;
+    height: 160%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: start;
+}
+
+#online-div-absolute>div {
+    width: 50%;
+}
+
+#online-banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-top: 120px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+#online-banner-text>div {
+    width: fit-content;
+}
+
+#online-banner-text1 {
+    color: #00AA8F;
+    font-size: 16px;
+    font-family: 'Avenir Next';
+    font-weight: bold;
+}
+
+#online-banner-text2 {
+    color: #fff;
+    font-family: 'Avenir Next';
+    font-weight: bolder;
+    font-size: 56px;
+}
+
+/* Gradiente de fundo da seção online */
+#online-div-img {
+    background: url('http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/img2.png') no-repeat right bottom / contain;
+    width: 60% !important;
+    height: 100%;
+    position: relative;
+    top: 12%;
+}
+
+#online-div-img a {
+    display: block;
+    width: 500px;
+    height: 100%;
+}
+
+#online-context {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    padding: 50px 40px 150px;
+    column-gap: 40px;
+}
+
+.online-div {
+    width: auto;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px 70px 1fr;
+    align-items: start;
+    gap: 10px;
+}
+
+.online-img {
+    width: 100%;
+    height: 100%;
+    grid-row: 1/2;
+}
+
+.online-img img {
+    height: 50px;
+}
+
+.online-title {
+    color: #3C557C;
+    font-family: 'Avenir Next';
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px 10%;
+}
+
+.online-text {
+    font-family: 'Montserrat';
+    color: #3C557C;
+    line-height: 1.5;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+#offline-div-banner {
+    display: flex;
+    background: linear-gradient(to right, #00a991 65%, #3C557C 65%);
+    height: 210px;
+    position: relative;
+}
+
+#offline-div-absolute {
+    position: absolute;
+    height: 160%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+#offline-div-absolute>div {
+    width: 50%;
+}
+
+#offline-banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-top: 120px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+#offline-banner-text>div {
+    width: fit-content;
+}
+
+#offline-banner-text1 {
+    color: #3C557C;
+    font-size: 16px;
+    font-family: 'Avenir Next';
+    font-weight: bold;
+}
+
+#offline-banner-text2 {
+    color: #fff;
+    font-family: 'Avenir Next';
+    font-weight: bolder;
+    font-size: 56px;
+}
+
+/* Gradiente de fundo da seção offline */
+#offline-div-img {
+    background: url('http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/img5.png') no-repeat left center / contain;
+    width: 50% !important;
+    height: 100%;
+}
+
+#offline-context {
+    padding: 50px 30px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+#offline-context>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 35%;
+}
+
+#offline-context-text {
+    letter-spacing: -1px;
+}
+
+#offline-context-title {
+    font-family: 'Avenir Next';
+    font-weight: bolder;
+    color: #00A993;
+    font-size: 35px;
+    line-height: 1;
+}
+
+
+#offline-context-text>p {
+    font-family: 'Montserrat';
+    letter-spacing: -0.5px;
+    font-size: 16px;
+    color: #3C557C;
+    line-height: 1.5;
+    font-weight: 500;
+
+}
+
+#offline-context-text1 {
+    font-weight: bolder !important;
+}
+
+#offline-context-button {
+    width: fit-content;
+}
+
+#offline-context-button a {
+    text-decoration: none;
+}
+
+#offline-context-button button {
+    background: linear-gradient(to right, #00aa8f 0%, #99d48f 100%);
+    border: 0;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+
+/* ===== SEÇÃO DE PROCESSO ===== */
+/* Container principal da seção de processo */
+#process-section {
+    background: #3C557C;
+    /* Fundo azul corporativo */
+    padding: 50px 50px 80px;
+    /* Padding superior/lateral/inferior */
+    text-align: center;
+    /* Texto centralizado */
+    color: white;
+    /* Texto branco */
+}
+
+/* Título principal do processo */
+#process-title {
+    font-family: 'Avenir Next', sans-serif;
+    /* Fonte Avenir Next */
+    font-weight: bold;
+    /* Peso negrito */
+    font-size: 40px;
+    /* Tamanho grande */
+    padding: 20px;
+    /* Espaçamento interno */
+    line-height: 1;
+    /* Altura da linha compacta */
+}
+
+/* Container dos passos */
+#process-steps {
+    display: grid;
+    /* Layout em grid */
+    grid-template-columns: 2fr 1.5fr 2fr 1fr;
+    /* 4 colunas proporcionais */
+    width: 80%;
+    /* Largura de 80% */
+    gap: 15px;
+    /* Espaço entre colunas */
+    padding: 0 50px;
+    /* Padding lateral */
+    margin: 0 auto;
+    /* Centralização horizontal */
+    text-align: left;
+    /* Alinhamento à esquerda */
+}
+
+/* Divs dos passos e contexto do processo */
+#process-steps>div,
+.process-context {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Contexto específico dos passos */
+.process-context {
+    gap: 10px !important;
+    margin-left: 5px;
+}
+
+/* Linha conectora entre passos */
+.process-line {
+    display: flex;
+    align-items: center;
+}
+
+/* Div interna da linha conectora */
+.process-line div {
+    width: 105%;
+    height: 1px;
+    background: rgba(0, 170, 143, 0.5);
+    position: relative;
+    right: 5px;
+}
+
+/* Número do passo do processo */
+.process-line-number {
+    font-weight: bold;
+    font-family: 'Avenir Next', sans-serif !important;
+    font-size: 32px;
+}
+
+/* Título do contexto do passo */
+.process-context-title {
+    padding-right: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Elementos filhos do título do contexto */
+.process-context-title>* {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Texto verde do contexto */
+.process-context-green {
+    color: #00AA8F;
+}
+
+/* Texto explicativo do processo */
+.process-context-text {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+}
+
+
+
+/* ===== SEÇÃO DE CONTATO ===== */
+/* Container principal da seção de contato */
+article {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 50px 0px;
+    background-color: #E6E6E6;
+}
+
+/* Container do formulário de contato */
+#contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #3C557C;
+}
+
+/* Centralização dos elementos filhos do contact */
+#contact>div {
+    text-align: center;
+}
+
+/* Título principal "Fale Conosco" */
+#title-contact {
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: bold;
+    font-size: 49px;
+    line-height: 1;
+    margin-top: 16px;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo explicativo do formulário */
+#subtitle-contact {
+    font-size: 13px;
+}
+
+/* Grid principal do formulário (2 colunas) */
+#form-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    padding: 30px;
+    gap: 20px;
+}
+
+/* Colunas esquerda e direita do formulário */
+#form-contact-left,
+#form-contact-right {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    gap: 12px;
+}
+
+/* Largura máxima dos campos do formulário */
+#form-contact-left>div,
+#form-contact-right>div {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Alinhamento à direita da coluna esquerda */
+#form-contact-left>div {
+    margin-left: auto;
+}
+
+/* Estilo dos campos de input da coluna esquerda */
+#form-contact-left input {
+    padding: 8px 19px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilo dos placeholders e textos dos campos */
+#form-contact-left input::placeholder,
+#form-contact-left input,
+#form-contact-right textarea,
+#form-contact-right textarea::placeholder {
+    color: #3C557C;
+    font-size: 14px;
+}
+
+/* Container da textarea de mensagem */
+#div-contact-message {
+    grid-row: 1/4;
+}
+
+/* Seção dos radio buttons de economia */
+#radio-contact {
+    text-align: start;
+    grid-row: 4/6;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Textarea para mensagem do usuário */
+#contact-message {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 200px;
+    min-height: 100%;
+}
+
+/* Título da seção de expectativa de economia */
+#title-radio-contact {
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo explicativo dos radio buttons */
+#subtitle-radio-contact {
+    font-size: 12px;
+}
+
+/* Container dos radio buttons de economia */
+#context-radio-contact {
+    padding: 10px 0 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo base dos radio buttons customizados */
+#radio-contact input[type="radio"] {
+    appearance: none;
+    width: 55px;
+    height: 55px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3C557C;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Estado selecionado dos radio buttons */
+#radio-contact input[type="radio"]:checked {
+    background-color: #3C557C;
+    color: white;
+}
+
+/* Conteúdo dos radio buttons (percentual) */
+#radio-contact input[type="radio"]::after {
+    content: attr(value) '%';
+    font-size: 16px;
+}
+
+/* ===== BOTÃO DE UPLOAD DE ARQUIVO ===== */
+/* Botão customizado para upload de conta de energia */
+#file-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid #3C557C;
+    color: #3C557C;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+/* Ícone do anexo dentro do botão */
+#file-button img {
+    width: 45px;
+    height: 45px;
+}
+
+/* ===== CHECKBOX DE POLÍTICA DE PRIVACIDADE ===== */
+/* Checkbox da política de privacidade (desktop e mobile) */
+#contact-check,
+#contact-check2 {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+/* Container da política de privacidade (desktop e mobile) */
+#div-privacy1,
+#div-privacy2 {
+    grid-row: 7/8;
+    width: 100%;
+    background-color: white;
+    text-align: end;
+    padding: 10px;
+}
+
+/* Div de privacidade mobile (oculta por padrão) */
+#div-privacy2 {
+    display: none;
+}
+
+/* Label da política de privacidade */
+#privacy-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 12px;
+}
+
+/* Link da política de privacidade */
+#privacy-label a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* ===== BOTÃO DE ENVIO ===== */
+/* Container do botão de envio (ocupa 2 colunas) */
+#div-contact-button {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+/* Botão de envio com gradiente verde */
+#div-contact-button button {
+    background: linear-gradient(to right, #00aa8f 0%, #99d48f 100%);
+    border: 0;
+    padding: 20px 30px;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+/* ===== RODAPÉ ===== */
+/* Rodapé com logo da empresa */
+footer {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* Breakpoint para tablets e dispositivos móveis */
+@media (max-width: 768px) {
+
+    ##percentage, #text{
+        font-size: 16px;
+    }
+
+    #percentage{
+        font-size: 8em;
+    }
+
+    #online-context {
+        width: 90%;
+        gap: 30px;
+        padding: 40px 20px 220px;
+    }
+
+    #online-div-banner {
+        height: 400px;
+        background: linear-gradient(to bottom, #00a991 50%, #3C557C 50%);
+    }
+
+    #online-div-absolute {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150%;
+        gap: 0;
+    }
+
+    #online-div-absolute>div {
+        width: 100% !important;
+        margin: 0;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #online-div-img {
+        height: 200% !important;
+        background-position: center;
+        top: 20%;
+        max-width: 380px;
+    }
+
+    #online-div-img a {
+    height: 60% !important;
+    width: 100% !important;
+}
+
+    .online-div {
+        width: 100%;
+        grid-template-rows: 50px auto auto;
+    }
+
+    #offline-context {
+        padding: 40px 20px 50px;
+    }
+
+    #offline-context>div {
+        width: 100%;
+    }
+
+    #offline-div-banner {
+        height: 400px;
+        background: linear-gradient(to top, #00a991 50%, #3C557C 50%);
+    }
+
+    #offline-div-absolute {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150%;
+        gap: 0;
+    }
+
+    #offline-div-absolute>div {
+        width: 100% !important;
+        margin: 0;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #offline-div-img {
+        order: -1;
+        height: 200% !important;
+        background-position: center;
+    }
+
+    #offline-context-text>p {
+        font-size: 13px;
+    }
+
+    #process-section {
+        padding: 40px 20px 50px;
+    }
+
+    #process-title {
+        font-size: 30px;
+        padding: 20px 0;
+    }
+
+    /* Seção de processo em coluna única */
+    #process-steps {
+        grid-template-columns: 1fr;
+        /* Uma coluna */
+        width: 95%;
+        /* Largura reduzida */
+        padding: 10px 0;
+        /* Padding lateral menor */
+        text-align: left;
+        /* Texto centralizado */
+        gap: 30px;
+    }
+
+    #process-steps>div {
+        gap: 15px;
+    }
+
+
+    /* Container do formulário ocupa largura total */
+    #contact {
+        width: 100%;
+    }
+
+    /* Formulário muda para coluna única */
+    #form-contact {
+        grid-template-columns: 1fr;
+        /* Uma coluna apenas */
+        width: 95%;
+        /* Largura reduzida */
+        padding: 20px;
+        /* Padding menor */
+    }
+
+    /* Coluna esquerda com altura fixa para campos */
+    #form-contact-left {
+        grid-template-rows: repeat(5, 50px);
+        /* 5 linhas de 50px */
+    }
+
+    /* Coluna direita com altura automática */
+    #form-contact-right {
+        grid-template-rows: auto;
+        /* Altura automática */
+    }
+
+    /* Centralização de todos os campos */
+    #form-contact-left>div,
+    #form-contact-right>div {
+        margin: 0 auto;
+        /* Centraliza horizontalmente */
+        max-width: none;
+        /* Remove limitação de largura */
+    }
+
+    /* Ajuste da textarea de mensagem */
+    #contact-message {
+        height: 150px;
+        /* Altura fixa menor */
+        max-width: 100px;
+        /* Largura máxima reduzida */
+    }
+
+    /* Radio buttons sem posicionamento fixo */
+    #radio-contact {
+        grid-row: auto;
+        /* Posição automática */
+    }
+
+    /* Espaçamento entre radio buttons */
+    #context-radio-contact {
+        gap: 10px;
+        /* Espaço de 10px entre elementos */
+    }
+
+    /* Esconde div de privacidade desktop */
+    #div-privacy1 {
+        display: none;
+        /* Oculta completamente */
+    }
+
+    /* Mostra div de privacidade mobile */
+    #div-privacy2 {
+        display: block;
+        /* Torna visível */
+        grid-row: auto;
+        /* Posição automática */
+    }
+
+    /* Botão de envio ocupa uma coluna */
+    #div-contact-button {
+        grid-column: 1;
+        /* Apenas primeira coluna */
+        padding-top: 10px;
+        /* Padding superior reduzido */
+    }
+
+    /* Título menor para mobile */
+    #title-contact {
+        font-size: 40px;
+        /* Tamanho reduzido */
+    }
+}
