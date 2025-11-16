@@ -7,208 +7,271 @@
     <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/avenir-next" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&display=swap" rel="stylesheet">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>iSeven</title>
-    <script src="index.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="menu-collapse.js" defer></script>
     <script src="https://kit.fontawesome.com/67f2f137d1.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
+
     <div id="background-index">
         <div id="first-line">Quer saber como <br> economizar até</div>
         <div id="percentage">50<span id="percentage-simbol">%</span></div>
         <div id="text">da conta de energia<br>da sua empresa com<br>pouco investimento?</div>
-        <div id="logo"><img src="http://web.archive.org/web/20190130101929im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/logo-branco.png" alt=""></div>
+        <div id="logo"><img src="imgs/logo-branco.png" alt=""></div>
         <div id="down-arrow"></div>
     </div>
-    <div id="second-page">
-        <div id="lamp"></div>
-        <div id="advertisement">É Simples:<br><span id="advertisement-box1">Conhecimento</span><br><span
-                id="advertisement-box2">Há mais de 20 anos ajudamos empresas a economizar energia.</span></div>
+    <section id="section-inicial">
+        <div id="second-page">
+            <div id="lamp"><img src="imgs/lampada.png" alt=""></div>
+            <div id="advertisement">É Simples:<br>
+                <span id="advertisement-box1">Conhecimento</span>
+                <span id="advertisement-box2">Há mais de 20 anos ajudamos empresas a economizar energia.</span>
+            </div>
 
-        <ul id="container-logos">
-            <li id="vale"></li>
-            <li id="voto"></li>
-            <li id="fiat"></li>
-            <li id="yamana"></li>
-            <li id="danone"></li>
-            <li id="castrol"></li>
-        </ul>
-        <ul id="container-logos-mid">
-            <li id="arcelor"></li>
-            <li id="musashi"></li>
-            <li id="magna"></li>
-            <li id="bb"></li>
-            <li id="bimbo"></li>
-            <li id="malwee"></li>
-        </ul>
-        <ul id="container-logos-foot">
-            <li id="brembo"></li>
-            <li id="kroton"></li>
-            <li id="globo"></li>
-            <li id="magneti"></li>
-            <li id="rio"></li>
-            <li id="barra"></li>
-        </ul>
-        <div id="cut"></div>
-        <div id="tech">Tecnologia</div>
-        <div id="box-solution">Soluções<br><span id="online">Online</span></div>
-
-        <div id="container">
-            <div id="laptop"></div>
-            <div id="container-infos">
-                <ul id="client">
-                    <li id="box"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/cliente.png"
-                            alt=""></li>
-                    <li id="cont"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/contratos.png"
-                            alt=""><br>Contratos, contas de energia,<br>projetos elétricos, processo</li>
-                    <li id="med"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/medicao.png"
-                            alt=""><br><br>Medição da<br>concessionária</li>
-                    <li id="pc"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/telas.png"
-                            alt=""></li>
-                </ul>
-                <ul id="iseven">
-                    <li id="box-foot"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/iseven.png"
-                            alt=""></li>
-                    <li id="diag"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/diagnostico.png"
-                            alt=""><br>Diagnóstico, especificação de<br>módulos, parametrização</li>
-                    <li id="ger"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/modem.png"
-                            alt=""><br>Gerenciador/modem</li>
-                    <li id="soft"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/analise.png"
-                            alt=""><br>Software de Análise</li>
-                </ul>
-                <div id="barr"></div>
+            <div id="container-logos">
+                <div><img src="imgs/vale.png" alt="Vale"></div>
+                <div><img src="imgs/votorantim.png" alt="Votorantim"></div>
+                <div><img src="imgs/fiat.png" alt="Fiat"></div>
+                <div><img src="imgs/yamana.png" alt="Yamana"></div>
+                <div><img src="imgs/danone.png" alt="Danone"></div>
+                <div><img src="imgs/castrol.png" alt="Castrol"></div>
+                <div><img src="imgs/arcelor.png" alt="Arcelor"></div>
+                <div><img src="imgs/musashi.png" alt="Musashi"></div>
+                <div><img src="imgs/magna.png" alt="Magna"></div>
+                <div><img src="imgs/bb.png" alt="Banco do Brasil"></div>
+                <div><img src="imgs/bimbo.png" alt="Bimbo"></div>
+                <div><img src="imgs/malwee.png" alt="Malwee"></div>
+                <div><img src="imgs/brembo.png" alt="Brembo"></div>
+                <div><img src="imgs/kroton.png" alt="Kroton"></div>
+                <div><img src="imgs/globo.png" alt="Globo"></div>
+                <div><img src="imgs/magneti.png" alt="Magneti"></div>
+                <div><img src="imgs/riosul.png" alt="Rio Sul"></div>
+                <div><img src="imgs/barrashopping.png" alt="Barra Shopping"></div>
             </div>
         </div>
-        <div id="slicer"></div>
-        <div id="title-solutions-off">Soluções<br><span id="off">Offline</span></div>
-        <div id="container-solutions-off">
-            <div id="img-solutions-off"></div>
-            <div id="container-infos-off">
-                <ul id="client-off">
-                    <li id="box-off"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/cliente.png"
-                            alt=""></li>
-                    <li id="cont-off"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/contratos.png"
-                            alt=""><br>Contratos, contas de energia,<br>projetos elétricos, processo</li>
-                    <li id="pc-off"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/telas.png"
-                            alt=""></li>
-                </ul>
-                <ul id="iseven-off">
-                    <li id="box-foot-off"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/iseven.png"
-                            alt=""></li>
-                    <li id="diag-off"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/diagnostico.png"
-                            alt=""><br>Diagnóstico, especificação de<br>módulos, parametrização</li>
-                    <li id="soft-off"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/analise.png"
-                            alt=""><br>Software de Análise</li>
-                </ul>
-                <div id="barr-off"></div>
-            </div>
-        </div>
-    </div>
+        <div id="cut"><img src="imgs/divisao.png" alt="Divisão"></div>
+        <div id="div-tech-online">
+            <div id="tech">Tecnologia</div>
+            <div id="div-tech-online-container">
+                <div id="box-solution">Soluções<br><span id="online">Online</span></div>
+                <div id="div-tech-online-bottom">
+                    <div id="laptop"><img src="imgs/img3.png" alt=""></div>
+                    <div id="tech-online-container">
+                        <div id="tech-online-bottom-top">
+                            <div><img src="imgs/cliente.png" class="tech-online-container-img" alt=""></div>
+                            <div>
+                                <div><img src="imgs/contratos.png" alt=""></div>
+                                <div class="tech-online-container-green">Contratos, contas de energia, projetos
+                                    elétricos, processo</div>
+                            </div>
+                            <div>
+                                <div><img src="imgs/medicao.png" alt=""></div>
+                                <div class="tech-online-container-green">Medição da concessionária</div>
+                            </div>
+                            <div class="tech-online-container-blue"><img src="imgs/telas.png" id="telas" alt=""></div>
+                        </div>
+                        <div id="tech-online-bottom-bottom">
+                            <div><img src="imgs/iseven.png" alt="" class="tech-online-container-img"></div>
+                            <div>
+                                <div><img src="imgs/diagnostico.png" alt=""></div>
+                                <div class="tech-online-container-blue">Diagnóstico, especificação de módulos,
+                                    parametrização</div>
+                            </div>
+                            <div>
+                                <div><img src="imgs/modem.png" alt=""></div>
+                                <div class="tech-online-container-blue">Gerenciador/modem</div>
+                            </div>
+                            <div>
+                                <div><img src="imgs/analise.png" alt=""></div>
+                                <div class="tech-online-container-blue">Software de Análise</div>
+                            </div>
+                            <div id="divisao-online">
+                                <img src="imgs/divisao-online.png" class="tech-online-container-img" alt="">
+                            </div>
+                        </div>
 
-    <div id="menu-page">
-        <div id="menu">
-            <div id="logo-menu">
-                <img src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/logo-branco.png"
-                    alt="">
-            </div>
-            <ul id="menu-items">
-                <li id="btn-conhecimento"><a href="#second-page">Conhecimento/Tecnologia</a></li>
-                <li id="btn-beneficios"><a href="#beneficios-page">Benefícios</a></li>
-                <li id="btn-solucoes"><a href="#tech">Soluções Online/Offline</a></li>
-                <li id="btn-como-funciona"><a href="#process-section">Como Funciona</a></li>
-                <li id="btn-contrate"><a href="#contato">Contrate agora</a></li>
-            </ul>
-        </div>
-        <div id="container-energia">
-            <div id="raio"><img
-                    src="http://web.archive.org/web/20190130100900im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/raio.png"
-                    alt=""></div>
-            <div id="container-texto-energia">
-                <div id="texto-energia">A energia move o mundo,<br><span id="introd-texto-energia">e nossa
-                        tecnologia<br>move sua empresa em<br>direção à economia.</span><br>
-                    <div id="btn-contrate-energia"><a href="#contact">Contrate agora</a></div>
+                    </div>
                 </div>
-                <div id="imagem-roteador"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/img1.png"
-                        alt=""></div>
+            </div>
+            <div id="slicer">
+                <img src="imgs/divisao2.png" alt="">
+            </div>
+
+            <div id="box-solution">Soluções<br><span id="online">Offline</span></div>
+        </div>
+    </section>
+
+    <section id="section-offline-container">
+        <div id="div-tech-offline-container">
+            <div id="div-tech-offline-bottom">
+                <div id="mockup-app"><img src="imgs/mockup-app.png" alt=""></div>
+                <div id="tech-offline-container">
+                    <div id="tech-online-bottom-top">
+                        <div><img src="imgs/cliente.png" class="tech-online-container-img" alt=""></div>
+                        <div>
+                            <div><img src="imgs/contratos.png" alt=""></div>
+                            <div class="tech-online-container-green">Contratos, contas de energia, projetos
+                                elétricos, processo</div>
+                        </div>
+                        <div class="tech-online-container-blue"><img src="imgs/telas.png" id="telas" alt=""></div>
+                    </div>
+                    <div id="tech-online-bottom-bottom">
+                        <div><img src="imgs/iseven.png" alt="" class="tech-online-container-img"></div>
+                        <div>
+                            <div><img src="imgs/diagnostico.png" alt=""></div>
+                            <div class="tech-online-container-blue">Diagnóstico, especificação de módulos,
+                                parametrização</div>
+                        </div>
+                        <div>
+                            <div><img src="imgs/analise.png" alt=""></div>
+                            <div class="tech-online-container-blue">Software de Análise</div>
+                        </div>
+                        <div id="divisao-offline">
+                            <img src="imgs/divisao-offline.png" class="tech-online-container-img" alt="">
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    <div id="beneficios-page">
-        <div id="container-beneficios">
-            <div id="img-beneficio-financeiro">
-                <img src="http://web.archive.org/web/20190130100904im_/https://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/financeiro.png"
-                    alt="">
-            </div>
-            <div id="txt-beneficios-financeiros">Benefícios<br><span id="txt-financeiros">Financeiros</span></div>
-            <div id="arrow-beneficios-financeiros">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#00AA8F"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
-            </div>
-            <div id="txt-apresentacao-financeiro">Redução <span id="txt-apresentacao-no-bold">da conta de energia</span> em até 50%.<br><span id="txt-apresentacao-no-bold2">Confere e realiza a</span> previsão do valor da conta de energia.</div>
-        </div>
-        <div class="line-beneficios"></div>
-        <div id="container-beneficios-op">
-            <div id="img-beneficio-operacional">
-                <img src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/operacional.png"
-                    alt="">
-            </div>
-            <div id="txt-beneficios-operacionais">Benefícios<br><span id="txt-operacionais">Operacionais</span></div>
-            <div id="arrow-beneficios-operacionais">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#00AA8F"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
-            </div>
-            <div id="txt-apresentacao-operacional"><span id="txt-operacional-no-bold">Instalação e manutenção</span> simplificada.<br>Eliminação <span id="txt-operacional-no-bold2">de desperdícios.</span></div>
-        </div>
-        <div class="line-beneficios"></div>
-        <div id="container-beneficios-tec">
-            <div id="img-beneficio-tecnico">
-                <img src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/tecnicos.png"
-                    alt="">
-            </div>
-            <div id="txt-beneficios-tecnicos">Benefícios<br><span id="txt-tecnicos">Técnicos</span></div>
-            <div id="arrow-beneficios-tecnicos">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#00AA8F"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
-            </div>
-            <div id="txt-apresentacao-tecnico">Tecnologia <span id="txt-tec-no-bold">utilizada.</span><br><span id="txt-tec-no-bold2">Integração:</span> da coleta de dados a<br>elaboração de telas e relátorios.</div>
-        </div>
-        <div class="line-beneficios"></div>
-        <div id="container-beneficios-ger">
-            <div id="img-beneficio-gerencial">
-                <img src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/gerenciais.png"
-                    alt="">
-            </div>
-            <div id="txt-beneficios-gerenciais">Benefícios<br><span id="txt-gerenciais">Gerenciais</span></div>
-            <div id="arrow-beneficios-gerenciais">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#00AA8F"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
-            </div>
-            <div id="txt-apresentacao-gerencial">Informação exata <span id="txt-ger-no-bold">que facilita a tomada de decisões.</span><br><span id="txt-ger-no-bold2">Telas e relátorios</span> de fácil entendimento.</div>
-        </div>
-    </div>
+    </section>
 
 
 
-    
+    <section id="section-banner">
+        <div id="div-banner">
+            <div id="banner-menu">
+                <div id="banner-menu-imgs">
+                    <div id="banner-logo">
+                        <img src="imgs/logo-branco.png" alt="i.Seven">
+                    </div>
+                    <div id="banner-hamburger">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+
+                <ul id="banner-menu-items">
+                    <li><a href="#second-page">Conhecimento/Tecnologia</a></li>
+                    <li><a href="#beneficios-page">Benefícios</a></li>
+                    <li><a href="#tech">Soluções Online/Offline</a></li>
+                    <li><a href="#process-section">Como Funciona</a></li>
+                    <li id="banner-btn-contrate"><a href="#contact">Contrate agora <i
+                                class="fa-solid fa-angle-down"></i></a></li>
+                </ul>
+
+            </div>
+
+            <div id="banner-content">
+                <div id="banner-left">
+                    <div id="banner-raio"><img src="imgs/raio.png" alt=""></div>
+                    <div id="banner-text">
+                        <div id="banner-text-intro">A energia move o mundo,</div>
+                        <div id="banner-text-main">e nossa tecnologia<br>move sua empresa em<br>direção à economia.
+                        </div>
+                        <div id="banner-btn-contrate-main"><a href="#contact">Contrate agora <i
+                                    class="fa-solid fa-angle-down"></i></a></div>
+                    </div>
+                </div>
+                <div id="banner-right">
+                    <div id="banner-device"><img src="imgs/img1.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="div-beneficios">
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                    <img src="imgs/financeiro.png" alt="Financeiros">
+                </div>
+                <div class="beneficio-content">
+                    <div class="beneficio-title">
+                        <span class="beneficio-label">Benefícios</span>
+                        <span class="beneficio-name">Financeiros</span>
+                    </div>
+                    <div class="beneficio-arrow">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="beneficio-text">
+                        <strong>Redução</strong> da conta de energia<strong> em até 50%.</strong><br>
+                        Confere e realiza a previsão do valor da conta de energia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                    <img src="imgs/operacional.png" alt="Operacionais">
+                </div>
+                <div class="beneficio-content">
+                    <div class="beneficio-title">
+                        <span class="beneficio-label">Benefícios</span>
+                        <span class="beneficio-name">Operacionais</span>
+                    </div>
+                    <div class="beneficio-arrow">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="beneficio-text">
+                        Instalação e manutenção <strong>simplificada.</strong><br>
+                        <strong>Eliminação</strong> de desperdícios.
+                    </div>
+                </div>
+            </div>
+
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                    <img src="imgs/tecnicos.png" alt="Técnicos">
+                </div>
+                <div class="beneficio-content">
+                    <div class="beneficio-title">
+                        <span class="beneficio-label">Benefícios</span>
+                        <span class="beneficio-name">Técnicos</span>
+                    </div>
+                    <div class="beneficio-arrow">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="beneficio-text">
+                        <strong>Tecnologia</strong> utilizada.<br>
+                        <strong>Integração:</strong> da coleta de dados a<br>
+                        elaboração de telas e relátorios.
+                    </div>
+                </div>
+            </div>
+
+            <div class="beneficio-item">
+                <div class="beneficio-icon">
+                    <img src="imgs/gerenciais.png" alt="Gerenciais">
+                </div>
+                <div class="beneficio-content">
+                    <div class="beneficio-title">
+                        <span class="beneficio-label">Benefícios</span>
+                        <span class="beneficio-name">Gerenciais</span>
+                    </div>
+                    <div class="beneficio-arrow">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="beneficio-text">
+                        <strong>Informação exata</strong> que facilita a tomada de decisões.<br>
+                        Telas e relátorios <strong>de fácil entendimento.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
 
     <section id="online-section">
@@ -226,60 +289,46 @@
 
         <div id="online-context">
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/gerenciais.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/gerenciais.png" alt=""></div>
                 <div class="online-title">Dashboard</div>
                 <div class="online-text">Apresenta informações imediatas sobre o desempenho energético da empresa (custo
                     + eficiência). A tela principal apresenta análise dos custos de energia da eficiência dos principais
                     itens que compõem a conta de energia.</div>
             </div>
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/raio.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/raio.png" alt=""></div>
                 <div class="online-title">Mercado Livre de Energia</div>
                 <div class="online-text">Sintetiza as operações relacionadas ao Ambiente de Contratação Livre (ACL) como
                     migração, calendário de obrigações, contabilização e liquidação, previsão de carga, Preço de
                     Liquidação das Diferenças (PLD) e gestão financeira.</div>
             </div>
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/documentos.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/documentos.png" alt=""></div>
                 <div class="online-title">Documentos / Processos</div>
                 <div class="online-text">Realiza o tratamento e organização de todos os documentos e processos
                     relacionados ao mercado de energia.</div>
             </div>
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/contas.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/contas.png" alt=""></div>
                 <div class="online-title">Contas</div>
                 <div class="online-text">Realiza a conferência das contas de energia faturadas pela concessionária e
                     agentes comercializadores de energia; permite também, através de algorítimos, que faturas sejam
                     projetadas antes do fechamento do mês (previsão de custo).</div>
             </div>
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/comunicacao.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/comunicacao.png" alt=""></div>
                 <div class="online-title">Comunicação</div>
                 <div class="online-text">Permite ao usuário acompanhar e gerenciar todas as comunicações enviadas e
                     recebidas da equipe i.Seven.</div>
             </div>
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/cenarios.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/cenarios.png" alt=""></div>
                 <div class="online-title">Cenários / Indicadores</div>
                 <div class="online-text">Realiza a comparação de indicadores do cliente com setores do mesmo ramo de
                     atividade favorecendo a busca por melhores práticas.</div>
             </div>
             <div class="online-div">
-                <div class="online-img"><img
-                        src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/treinamento.png"
-                        alt=""></div>
+                <div class="online-img"><img src="imgs/treinamento.png" alt=""></div>
                 <div class="online-title">Treinamento</div>
                 <div class="online-text">Transfere conceitos e informações sobre o mercado de energia em diferentes
                     níveis (básico, intermediário e avançado).</div>
@@ -325,18 +374,14 @@
 
     <!-- Seção de processo -->
     <section id="process-section">
-        <div id="process-icon"><img
-                src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/economizar.png"
-                alt=""></div>
+        <div id="process-icon"><img src="imgs/economizar.png" alt=""></div>
         <h2 id="process-title">Veja como é fácil<br>economizar com I.Seven</h2>
 
         <div id="process-steps">
             <div>
                 <div class="process-line-title">
                     <div class="process-line-number">1</div>
-                    <div class="process-line"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/circulo.png"
-                            alt="">
+                    <div class="process-line"><img src="imgs/circulo.png" alt="">
                         <div></div>
                     </div>
                 </div>
@@ -360,9 +405,7 @@
             <div>
                 <div class="process-line-title">
                     <div class="process-line-number">2</div>
-                    <div class="process-line"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/circulo.png"
-                            alt="">
+                    <div class="process-line"><img src="imgs/circulo.png" alt="">
                         <div></div>
                     </div>
                 </div>
@@ -376,9 +419,7 @@
             <div>
                 <div class="process-line-title">
                     <div class="process-line-number">3</div>
-                    <div class="process-line"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/circulo.png"
-                            alt="">
+                    <div class="process-line"><img src="imgs/circulo.png" alt="">
                         <div></div>
                     </div>
                 </div>
@@ -393,9 +434,7 @@
             <div>
                 <div class="process-line-title">
                     <div class="process-line-number">4</div>
-                    <div class="process-line"><img
-                            src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/circulo.png"
-                            alt="">
+                    <div class="process-line"><img src="imgs/circulo.png" alt="">
                     </div>
                 </div>
                 <div class="process-context">
@@ -411,9 +450,7 @@
     <!-- Seção de contato -->
     <article>
         <form id="contact">
-            <div><img
-                    src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/contato.png"
-                    alt="Imagem de contato"></div>
+            <div><img src="imgs/contato.png" alt="Imagem de contato"></div>
 
             <div>
                 <p id="title-contact">Fale Conosco</p>
@@ -433,8 +470,7 @@
                             style="display: none;">
                         <label for="contact-file" id="file-button">
                             Anexe sua última conta de energia
-                            <img src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/anexo.png"
-                                alt="Ícone de anexo">
+                            <img src="imgs/anexo.png" alt="Ícone de anexo">
                         </label>
                     </div>
 
@@ -488,8 +524,7 @@
 
     <!-- Rodapé -->
     <footer>
-        <img src="http://web.archive.org/web/20240817035908im_/http://reduzirenergia.com.br/wp-content/themes/twentyseventeen/assets/images/isevenfoot.png"
-            alt="">
+        <img src="imgs/isevenfoot.png" alt="">
     </footer>
 </body>
 
