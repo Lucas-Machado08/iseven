@@ -19,6 +19,7 @@
     <script src="script.js" defer></script>
     <script src="menu-collapse.js" defer></script>
     <script src="https://kit.fontawesome.com/67f2f137d1.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -270,14 +271,15 @@
     </section>
 
 
-
-
-
-
     <section id="online-section">
         <div id="online-div-banner">
             <div id="online-div-absolute">
-                <div id="online-div-img"><a href="https://www.youtube.com/@isevenenergy"></a></div>
+                <div id="online-div-img">
+                    <iframe src="https://www.youtube.com/embed/bpAacXKS7fs?si=q1Y9WRk94s9pFHBJ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
                 <div id="online-banner-text">
                     <div>
                         <p id="online-banner-text1">Soluções</p>
@@ -460,10 +462,10 @@
 
             <div id="form-contact">
                 <div id="form-contact-left">
-                    <div><input type="text" placeholder="Qual seu nome?*" required></div>
-                    <div><input type="email" placeholder="Qual seu e-mail?*" required></div>
-                    <div><input type="tel" id="phone-input" placeholder="Qual seu telefone?*" required></div>
-                    <div><input type="text" placeholder="Em qual cidade você está?*" required></div>
+                    <div><input type="text" name="nome" placeholder="Qual seu nome?*" required></div>
+                    <div><input type="email" name="email" placeholder="Qual seu e-mail?*" required></div>
+                    <div><input type="tel" name="telefone" id="phone-input" placeholder="Qual seu telefone?*" required></div>
+                    <div><input type="text" name="cidade" placeholder="Em qual cidade você está?*" required></div>
 
                     <div id="div-contact-file">
                         <input type="file" name="anexo" id="contact-file" accept=".pdf,.doc,.docx,.jpg,.png"
@@ -484,7 +486,7 @@
 
                 <div id="form-contact-right">
                     <div id="div-contact-message">
-                        <textarea name="message" id="contact-message"
+                        <textarea name="mensagem" id="contact-message"
                             placeholder="Se desejar, descreva brevemente como estão as questões relacionadas a energia em sua empresa."></textarea>
                     </div>
 
@@ -530,5 +532,3 @@
 
 
 </html>
-
-
