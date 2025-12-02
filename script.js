@@ -20,6 +20,24 @@ function phoneMask(input) {
 }
 
 window.addEventListener('load', () => {
+    // Previne scroll automático indesejado
+    if (window.location.hash && !sessionStorage.getItem('allowScroll')) {
+        // Remove o hash temporariamente
+        const hash = window.location.hash;
+        history.replaceState(null, null, window.location.pathname);
+        
+        // Rola para o topo
+        window.scrollTo(0, 0);
+        
+        // Restaura o hash após um pequeno delay se necessário
+        setTimeout(() => {
+            if (sessionStorage.getItem('intentionalNavigation')) {
+                window.location.hash = hash;
+                sessionStorage.removeItem('intentionalNavigation');
+            }
+        }, 100);
+    }
+    
     handlePrivacyRequired();
     
     const phoneInput = document.getElementById('phone-input');
@@ -27,6 +45,16 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', handlePrivacyRequired);
+
+// Marca navegação intencional quando links âncora são clicados
+document.addEventListener('DOMContentLoaded', function() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            sessionStorage.setItem('intentionalNavigation', 'true');
+        });
+    });
+});
 
 // EmailJS configuration
 (function() {
