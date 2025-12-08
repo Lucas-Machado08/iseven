@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Imagem de Teste - Conta de Energia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        #conta-energia {
+            width: 1600px;
+            background: white;
+            padding: 80px;
+            margin: 20px auto;
+            border: 4px solid #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #00AA8F;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 64px;
+            font-weight: bold;
+            color: #00AA8F;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            font-size: 22px;
+        }
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+        .value {
+            color: #666;
+        }
+        .total {
+            font-size: 48px;
+            font-weight: bold;
+            color: #00AA8F;
+            text-align: right;
+            margin-top: 50px;
+            padding: 40px;
+            background: #e8f5f3;
+            border-radius: 8px;
+        }
+        .detalhes {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        .detalhes h3 {
+            color: #00AA8F;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .detalhes p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background: #00AA8F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #008C75;
+        }
+        #info {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="conta-energia">
+        <div class="header">
+            <div class="logo">⚡ ENERGIA BRASIL S.A.</div>
+            <p>Conta de Energia Elétrica</p>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">Cliente:</span>
+            <span class="value">EMPRESA TESTE LTDA</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">Instalação:</span>
+            <span class="value">123456789</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">Mês de Referência:</span>
+            <span class="value">Janeiro/2024</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">Consumo (kWh):</span>
+            <span class="value">15.420 kWh</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">Energia Consumida:</span>
+            <span class="value">R$ 8.450,00</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">Demanda Contratada:</span>
+            <span class="value">R$ 2.300,00</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">ICMS:</span>
+            <span class="value">R$ 1.890,00</span>
+        </div>
+        
+        <div class="info-row">
+            <span class="label">PIS/COFINS:</span>
+            <span class="value">R$ 650,00</span>
+        </div>
+        
+        <div class="total">
+            VALOR TOTAL: R$ 13.290,00
+        </div>
+        
+        <div class="detalhes">
+            <h3>Detalhamento do Consumo</h3>
+            <p><strong>Período de Medição:</strong> 01/01/2024 a 31/01/2024</p>
+            <p><strong>Dias de Consumo:</strong> 31 dias</p>
+            <p><strong>Média Diária:</strong> 497 kWh/dia</p>
+            <p><strong>Tarifa Aplicada:</strong> R$ 0,548 por kWh</p>
+            <p><strong>Bandeira Tarifaria:</strong> Verde (sem acréscimo)</p>
+            <p><strong>Histórico de Consumo:</strong></p>
+            <p>Dezembro/2023: 14.890 kWh | Novembro/2023: 15.120 kWh | Outubro/2023: 14.650 kWh</p>
+        </div>
+        
+        <p style="text-align: center; margin-top: 40px; color: #999; font-size: 16px;">
+            <strong>Vencimento:</strong> 15/02/2024<br>
+            <strong>Código de Barras:</strong> 12345.67890 12345.678901 12345.678901 1 23456789012345
+        </p>
+    </div>
+    
+    <button onclick="baixarImagem()">📥 Baixar Imagem de Teste</button>
+    <div id="info"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function baixarImagem() {
+            const elemento = document.getElementById('conta-energia');
+            const info = document.getElementById('info');
+            
+            info.innerHTML = 'Gerando imagem...';
+            
+            html2canvas(elemento, {
+                scale: 5,
+                backgroundColor: '#ffffff',
+                logging: false,
+                useCORS: true
+            }).then(canvas => {
+                // Converter para blob
+                // Converter para JPEG de alta qualidade para aumentar o tamanho
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'conta-energia-teste.jpg';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    const sizeKB = (blob.size / 1024).toFixed(1);
+                    const sizeMB = (blob.size / 1024 / 1024).toFixed(2);
+                    info.innerHTML = `✅ Imagem gerada! Tamanho: ${sizeKB}KB (${sizeMB}MB)`;
+                }, 'image/jpeg', 1.0);
+            });
+        }
+    </script>
+</body>
+</html>

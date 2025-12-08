@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // EmailJS configuration
 (function() {
-    emailjs.init('4wJUnjOtyVkhPVTWT');
+    emailjs.init('M0sFgfekqxIsMSU5N');
 })();
 
 // Resetar label do arquivo quando formulário for resetado
@@ -118,8 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
             telefone: formData.get('telefone') || '',
             cidade: formData.get('cidade') || '',
             mensagem: formData.get('mensagem') || '',
-            economia: formData.get('economia') || '10',
-            to_email: 'contato@isevenenergy.com.br'
+            economia: formData.get('economia') || '10'
         };
         
         // Validar campos obrigatórios
@@ -130,8 +129,32 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Validar anexo obrigatório
+        if (!file) {
+            alert('Por favor, anexe uma foto da sua conta de energia.');
+            
+            // Destacar o campo de anexo
+            const fileLabel = document.getElementById('file-button');
+            if (fileLabel) {
+                fileLabel.style.borderColor = '#ff0000';
+                fileLabel.style.backgroundColor = '#ffe6e6';
+                fileLabel.classList.add('error-shake');
+                setTimeout(() => {
+                    fileLabel.classList.remove('error-shake');
+                    fileLabel.style.borderColor = '#3C557C';
+                    fileLabel.style.backgroundColor = 'transparent';
+                }, 2000);
+            }
+            
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
+            return;
+        }
+        
         // Processar e enviar com imagem
         if (file) {
+            console.log('Arquivo selecionado:', file.name, 'Tamanho:', (file.size / 1024).toFixed(2) + 'KB', 'Tipo:', file.type);
+            
             // Validar tamanho (máx 2MB)
             if (file.size > 2 * 1024 * 1024) {
                 alert('A imagem é muito grande. Por favor, selecione uma imagem menor que 2MB.');
@@ -143,15 +166,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // Comprimir e converter imagem
             const reader = new FileReader();
             reader.onload = function(e) {
+                console.log('Arquivo carregado, tamanho Base64:', (e.target.result.length / 1024).toFixed(2) + 'KB');
                 const img = new Image();
                 img.onload = function() {
+                    console.log('Imagem carregada, dimensões:', img.width + 'x' + img.height);
                     // Criar canvas para redimensionar
                     const canvas = document.createElement('canvas');
                     let width = img.width;
                     let height = img.height;
                     
-                    // Redimensionar se maior que 1200px
-                    const maxSize = 1200;
+                    // Redimensionar para tamanho menor (800px)
+                    const maxSize = 1000;
                     if (width > maxSize || height > maxSize) {
                         if (width > height) {
                             height = (height / width) * maxSize;
@@ -167,48 +192,75 @@ document.addEventListener('DOMContentLoaded', function() {
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, width, height);
                     
-                    // Converter para Base64 com compressão
-                    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
-                    
-                    templateParams.anexo_nome = file.name;
-                    templateParams.anexo_base64 = compressedBase64;
-                    
-                    // Enviar via EmailJS com anexo
-                    emailjs.send('service_q3fw9yi', 'template_zcr14hk', templateParams)
-                        .then(function(response) {
-                            alert('Mensagem e imagem enviadas com sucesso! Entraremos em contato em breve.');
-                            form.reset();
-                            resetFileLabel();
-                        })
-                        .catch(function(error) {
-                            alert('Erro ao enviar mensagem. Tente novamente.');
-                            console.error('Erro:', error);
-                        })
-                        .finally(function() {
+                    // Função para tentar enviar com diferentes níveis de compressão
+                    function tentarEnviar(tentativa = 1) {
+                        let quality, size;
+                        
+                        if (tentativa === 1) {
+                            quality = 0.5;
+                            size = 1000;
+                        } else if (tentativa === 2) {
+                            quality = 0.5;
+                            size = 800;
+                            console.log('Tentativa 2: Recomprimindo...');
+                            submitBtn.innerHTML = 'Recomprimindo... <i class="fa-solid fa-spinner fa-spin"></i>';
+                        } else {
+                            alert('Erro: A imagem é muito complexa. Tente uma imagem mais simples.');
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
-                        });
+                            return;
+                        }
+                        
+                        let newWidth = img.width;
+                        let newHeight = img.height;
+                        
+                        if (newWidth > size || newHeight > size) {
+                            if (newWidth > newHeight) {
+                                newHeight = (newHeight / newWidth) * size;
+                                newWidth = size;
+                            } else {
+                                newWidth = (newWidth / newHeight) * size;
+                                newHeight = size;
+                            }
+                        }
+                        
+                        canvas.width = newWidth;
+                        canvas.height = newHeight;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                        
+                        const compressedBase64 = canvas.toDataURL('image/jpeg', quality);
+                        console.log('Tentativa ' + tentativa + ' - Tamanho:', (compressedBase64.length / 1024).toFixed(2) + 'KB');
+                        
+                        templateParams.anexo_nome = file.name;
+                        templateParams.anexo_base64 = compressedBase64;
+                        
+                        emailjs.send('service_9ltq9ol', 'template_mtpp2zo', templateParams)
+                            .then(function(response) {
+                                alert('Mensagem e imagem enviadas com sucesso! Entraremos em contato em breve.');
+                                form.reset();
+                                resetFileLabel();
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
+                            })
+                            .catch(function(error) {
+                                console.error('Erro tentativa ' + tentativa + ':', error);
+                                
+                                if (error.status === 413 && tentativa < 2) {
+                                    tentarEnviar(tentativa + 1);
+                                } else {
+                                    alert('Erro ao enviar: ' + (error.text || error.message || 'Tente novamente.'));
+                                    submitBtn.disabled = false;
+                                    submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
+                                }
+                            });
+                    }
+                    
+                    tentarEnviar(1);
                 };
                 img.src = e.target.result;
             };
             reader.readAsDataURL(file);
-        } else {
-            templateParams.anexo_nome = 'Nenhuma imagem anexada';
-            
-            // Enviar via EmailJS sem anexo
-            emailjs.send('service_q3fw9yi', 'template_zcr14hk', templateParams)
-                .then(function(response) {
-                    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                    form.reset();
-                    resetFileLabel();
-                })
-                .catch(function(error) {
-                    alert('Erro ao enviar mensagem. Tente novamente.');
-                })
-                .finally(function() {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
-                });
         }
     });
 });
