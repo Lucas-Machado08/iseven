@@ -80,9 +80,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// EmailJS configuration
+// EmailJS configurations
+const emailConfigs = [
+    {
+        publicKey: 'M0sFgfekqxIsMSU5N',
+        serviceId: 'service_9ltq9ol',
+        templateId: 'template_mtpp2zo'
+    },
+    {
+        publicKey: '4wJUnjOtyVkhPVTWT',
+        serviceId: 'service_q3fw9yi',
+        templateId: 'template_zcr14hk'
+    },
+    {
+        publicKey: 's6nxs3LPTzK0AeUJp',
+        serviceId: 'service_l6fum0d',
+        templateId: 'template_5k8ifzd'
+    }
+];
+
+let currentConfigIndex = 0;
+
+// Initialize with first config
 (function() {
-    emailjs.init('M0sFgfekqxIsMSU5N');
+    emailjs.init(emailConfigs[0].publicKey);
 })();
 
 // Resetar label do arquivo quando formulário for resetado
@@ -197,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         let quality, size;
                         
                         if (tentativa === 1) {
-                            quality = 0.5;
+                            quality = 0.6;
                             size = 1000;
                         } else if (tentativa === 2) {
                             quality = 0.5;
@@ -235,7 +256,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         templateParams.anexo_nome = file.name;
                         templateParams.anexo_base64 = compressedBase64;
                         
-                        emailjs.send('service_9ltq9ol', 'template_mtpp2zo', templateParams)
+                        const config = emailConfigs[currentConfigIndex];
+                        emailjs.send(config.serviceId, config.templateId, templateParams)
                             .then(function(response) {
                                 alert('Mensagem e imagem enviadas com sucesso! Entraremos em contato em breve.');
                                 form.reset();
@@ -244,11 +266,21 @@ document.addEventListener('DOMContentLoaded', function() {
                                 submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
                             })
                             .catch(function(error) {
-                                console.error('Erro tentativa ' + tentativa + ':', error);
+                                console.error('Erro tentativa ' + tentativa + ' (config ' + currentConfigIndex + '):', error);
                                 
+                                // Se erro 413, tentar comprimir mais
                                 if (error.status === 413 && tentativa < 2) {
                                     tentarEnviar(tentativa + 1);
-                                } else {
+                                }
+                                // Se erro de limite (402/429) e tem config alternativa, trocar
+                                else if ((error.status === 402 || error.status === 429) && currentConfigIndex < emailConfigs.length - 1) {
+                                    console.log('Limite atingido, trocando para configuração alternativa...');
+                                    currentConfigIndex++;
+                                    emailjs.init(emailConfigs[currentConfigIndex].publicKey);
+                                    submitBtn.innerHTML = 'Tentando novamente... <i class="fa-solid fa-spinner fa-spin"></i>';
+                                    tentarEnviar(1);
+                                }
+                                else {
                                     alert('Erro ao enviar: ' + (error.text || error.message || 'Tente novamente.'));
                                     submitBtn.disabled = false;
                                     submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
