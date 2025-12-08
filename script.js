@@ -19,6 +19,14 @@ function phoneMask(input) {
         .replace(/(-\d{4})\d+?$/, '$1');
 }
 
+function truncateFileName(fileName, maxLength = 20) {
+    if (fileName.length <= maxLength) return fileName;
+    const extension = fileName.split('.').pop();
+    const nameWithoutExt = fileName.substring(0, fileName.lastIndexOf('.'));
+    const truncatedName = nameWithoutExt.substring(0, maxLength - extension.length - 4);
+    return `${truncatedName}...${extension}`;
+}
+
 window.addEventListener('load', () => {
     // Previne scroll automático indesejado
     if (window.location.hash && !sessionStorage.getItem('allowScroll')) {
@@ -54,12 +62,38 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.setItem('intentionalNavigation', 'true');
         });
     });
+    
+    // Atualizar label quando imagem for selecionada
+    const fileInput = document.getElementById('contact-file');
+    const fileLabel = document.getElementById('file-button');
+    
+    if (fileInput && fileLabel) {
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const fileName = truncateFileName(this.files[0].name);
+                const fileSize = (this.files[0].size / 1024).toFixed(1);
+                fileLabel.innerHTML = `<i class="fa-solid fa-check" style="color: #00AA8F;"></i> ${fileName} (${fileSize}KB)`;
+                fileLabel.style.backgroundColor = '#e8f5f3';
+                fileLabel.style.borderColor = '#00AA8F';
+            }
+        });
+    }
 });
 
 // EmailJS configuration
 (function() {
     emailjs.init('4wJUnjOtyVkhPVTWT');
 })();
+
+// Resetar label do arquivo quando formulário for resetado
+function resetFileLabel() {
+    const fileLabel = document.getElementById('file-button');
+    if (fileLabel) {
+        fileLabel.innerHTML = 'Anexe uma foto da sua última conta de energia <img src="imgs/anexo.png" alt="Ícone de anexo">';
+        fileLabel.style.backgroundColor = '';
+        fileLabel.style.borderColor = '';
+    }
+}
 
 // Form submission handler
 document.addEventListener('DOMContentLoaded', function() {
@@ -96,27 +130,85 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Adicionar informações do arquivo (sem anexar)
+        // Processar e enviar com imagem
         if (file) {
-            const fileSizeKB = (file.size / 1024).toFixed(1);
-            templateParams.anexo_nome = `${file.name} (${fileSizeKB}KB)`;
-            alert(`Arquivo selecionado: ${file.name}\nTamanho: ${fileSizeKB}KB\n\nAs informações serão enviadas. Você poderá enviar o arquivo por email após nosso contato.`);
-        } else {
-            templateParams.anexo_nome = 'Nenhum arquivo anexado';
-        }
-        
-        // Enviar via EmailJS
-        emailjs.send('service_q3fw9yi', 'template_zcr14hk', templateParams)
-            .then(function(response) {
-                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                form.reset();
-            })
-            .catch(function(error) {
-                alert('Erro ao enviar mensagem. Tente novamente.');
-            })
-            .finally(function() {
+            // Validar tamanho (máx 2MB)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('A imagem é muito grande. Por favor, selecione uma imagem menor que 2MB.');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
-            });
+                return;
+            }
+            
+            // Comprimir e converter imagem
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    // Criar canvas para redimensionar
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    
+                    // Redimensionar se maior que 1200px
+                    const maxSize = 1200;
+                    if (width > maxSize || height > maxSize) {
+                        if (width > height) {
+                            height = (height / width) * maxSize;
+                            width = maxSize;
+                        } else {
+                            width = (width / height) * maxSize;
+                            height = maxSize;
+                        }
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Converter para Base64 com compressão
+                    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+                    
+                    templateParams.anexo_nome = file.name;
+                    templateParams.anexo_base64 = compressedBase64;
+                    
+                    // Enviar via EmailJS com anexo
+                    emailjs.send('service_q3fw9yi', 'template_zcr14hk', templateParams)
+                        .then(function(response) {
+                            alert('Mensagem e imagem enviadas com sucesso! Entraremos em contato em breve.');
+                            form.reset();
+                            resetFileLabel();
+                        })
+                        .catch(function(error) {
+                            alert('Erro ao enviar mensagem. Tente novamente.');
+                            console.error('Erro:', error);
+                        })
+                        .finally(function() {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
+                        });
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            templateParams.anexo_nome = 'Nenhuma imagem anexada';
+            
+            // Enviar via EmailJS sem anexo
+            emailjs.send('service_q3fw9yi', 'template_zcr14hk', templateParams)
+                .then(function(response) {
+                    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                    form.reset();
+                    resetFileLabel();
+                })
+                .catch(function(error) {
+                    alert('Erro ao enviar mensagem. Tente novamente.');
+                })
+                .finally(function() {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Receber Atendimento <i class="fa-solid fa-envelope"></i>';
+                });
+        }
     });
 });
